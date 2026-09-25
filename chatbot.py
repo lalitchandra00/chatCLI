@@ -7,7 +7,7 @@ load_dotenv()
 HF_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN") or os.getenv("HUGGINGFACE_API_KEY")
 
 llm = HuggingFaceEndpoint(
-    repo_id="Qwen/Qwen2.5-7B-Instruct",
+    repo_id="Qwen/Qwen2.5-Coder-7B-Instruct",
     task="text-generation",
     huggingfacehub_api_token=HF_API_TOKEN,
 )
@@ -19,6 +19,6 @@ while True:
     if user_input.strip().lower() == "exit":
         break
     result = model.invoke(user_input)
-    print("AI : ", result.content)   
+    print("AI : ", result.content)
 
 
